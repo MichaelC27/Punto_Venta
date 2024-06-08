@@ -4,6 +4,7 @@
  */
 package com.puntoventa.vistas;
 
+import com.puntoventa.conexion.TestConexion;
 import com.puntoventa.style.lbl_boton;
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +25,7 @@ public class frm_menu extends javax.swing.JFrame {
     public frm_menu() {
         initComponents();
         applyButtonStyles();
-       
+
     }
 
     /**
@@ -53,12 +54,27 @@ public class frm_menu extends javax.swing.JFrame {
 
         lbl_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/puntoventa/recursos/venta.png"))); // NOI18N
         lbl_ventas.setText("Ventas");
+        lbl_ventas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_ventasMouseClicked(evt);
+            }
+        });
 
         lbl_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/puntoventa/recursos/personas.png"))); // NOI18N
         lbl_clientes.setText("Clientes");
+        lbl_clientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_clientesMouseClicked(evt);
+            }
+        });
 
         lbl_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/puntoventa/recursos/agregar-producto.png"))); // NOI18N
         lbl_productos.setText("Productos");
+        lbl_productos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_productosMouseClicked(evt);
+            }
+        });
 
         lbl_vendedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/puntoventa/recursos/vendedor.png"))); // NOI18N
         lbl_vendedores.setText("Vendedores");
@@ -103,19 +119,18 @@ public class frm_menu extends javax.swing.JFrame {
                 .addComponent(panel_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jp_bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jp_bgLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(0, 737, Short.MAX_VALUE))))
+                    .addComponent(jLabel5)
+                    .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jp_bgLayout.setVerticalGroup(
             jp_bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_bgLayout.createSequentialGroup()
+            .addGroup(jp_bgLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(panel_menu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel_menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -132,6 +147,19 @@ public class frm_menu extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lbl_ventasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_ventasMouseClicked
+       
+    }//GEN-LAST:event_lbl_ventasMouseClicked
+
+    private void lbl_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_clientesMouseClicked
+         showForm(new pnf_clientes());
+    }//GEN-LAST:event_lbl_clientesMouseClicked
+
+    private void lbl_productosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_productosMouseClicked
+        TestConexion obj = new TestConexion();
+         obj.main(new String[]{});
+    }//GEN-LAST:event_lbl_productosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -168,7 +196,12 @@ public class frm_menu extends javax.swing.JFrame {
         });
     }
 
- 
+    public void showForm(Component com) {
+        body.removeAll();
+        body.add(com);
+        body.repaint();
+        body.revalidate();
+    }
 
     private void applyButtonStyles() {
         lbl_boton.applyButtonStyle(lbl_ventas);

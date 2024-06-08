@@ -47,24 +47,22 @@
                   <Component id="panel_menu" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="body" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="737" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="body" min="-2" pref="730" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="50" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="body" min="-2" pref="641" max="-2" attributes="0"/>
               </Group>
-              <Component id="panel_menu" alignment="1" max="32767" attributes="0"/>
+              <Component id="panel_menu" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -115,6 +113,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ventas"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_ventasMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbl_clientes">
               <Properties>
@@ -123,6 +124,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Clientes"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_clientesMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbl_productos">
               <Properties>
@@ -131,6 +135,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Productos"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_productosMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbl_vendedores">
               <Properties>

@@ -66,6 +66,8 @@ public class clientes {
         this.telefono = telefono;
     }
     
-    
+   public void mostrar(){
+       
+   }
    
 }
