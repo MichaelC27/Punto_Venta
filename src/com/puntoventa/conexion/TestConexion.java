@@ -10,7 +10,7 @@ public class TestConexion {
         Connection con = null;
         try {
             // Establecer la conexión
-            con = conexion.getConnection();
+            con = Conexion.getConnection();
             
             // Verificar si la conexión se estableció correctamente
             if (con != null) {

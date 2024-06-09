@@ -4,8 +4,12 @@
  */
 package com.puntoventa.vistas;
 
+import com.puntoventa.conexion.Conexion;
 import com.puntoventa.controladores.clientes;
 import com.puntoventa.style.txt_estilos;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -134,6 +138,11 @@ private void applyTextfieldStyles() {
     }
     private void btn_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarActionPerformed
         clientes obj_C = new clientes();
+        Connection conexion = null;
+
+        /*try {
+        conexion = Conexion.getConnection();
+        if (conexion != null) {
         obj_C.setCed_cliente(txt_Cedula.getText().trim());
         obj_C.setNombre(txt_nombre.getText().trim());
         obj_C.setApellido(txt_apellido.getText().trim());
@@ -141,6 +150,47 @@ private void applyTextfieldStyles() {
         obj_C.setCorreo(txt_correo.getText().trim());
         obj_C.setTelefono(txt_telefono.getText().trim());
         obj_C.setDireccion(txt_direccion.getText().trim());
+        int resultado = obj_C.insertCliente(conexion);
+        if (resultado > 0) {
+        JOptionPane.showMessageDialog(this, "Cliente insertado correctamente.");
+        } else {
+        JOptionPane.showMessageDialog(this, "Error al insertar el cliente.");
+        }
+        } else {
+        JOptionPane.showMessageDialog(this, "Error al conectar a la base de datos.");
+        }
+        } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }*/
+        conexion = Conexion.getConnection();
+        if (conexion != null) {
+            obj_C.setCed_cliente(txt_Cedula.getText().trim());
+            obj_C.setNombre(txt_nombre.getText().trim());
+            obj_C.setApellido(txt_apellido.getText().trim());
+            obj_C.setEdad(Integer.parseInt(txt_edad.getText().trim()));
+            obj_C.setCorreo(txt_correo.getText().trim());
+            obj_C.setTelefono(txt_telefono.getText().trim());
+            obj_C.setDireccion(txt_direccion.getText().trim());
+            
+            int resultado = obj_C.insertCliente(conexion);
+            
+            if (resultado > 0) {
+                JOptionPane.showMessageDialog(this, "Cliente insertado correctamente.");
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al insertar el cliente.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al conectar a la base de datos.");
+        }
+        if (conexion != null) {
+            try {
+                conexion.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
 
     }//GEN-LAST:event_btn_GuardarActionPerformed
 
