@@ -5,6 +5,7 @@
 package com.puntoventa.vistas;
 
 import com.puntoventa.controladores.clientes;
+import com.puntoventa.style.txt_estilos;
 
 /**
  *
@@ -17,6 +18,7 @@ public class pnf_clientes extends javax.swing.JPanel {
      */
     public pnf_clientes() {
         initComponents();
+        applyTextfieldStyles();
     }
 
     /**
@@ -41,26 +43,41 @@ public class pnf_clientes extends javax.swing.JPanel {
         btn_Guardar = new javax.swing.JButton();
         btn_Borrar = new javax.swing.JButton();
         btn_actualizar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        txt_Cedula = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(988, 641));
+        setPreferredSize(new java.awt.Dimension(790, 552));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_nombreActionPerformed(evt);
             }
         });
+        add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 153, -1));
+        add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 155, -1));
+        add(txt_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 77, -1));
+        add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 284, -1));
 
         txt_telefono.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 155, -1));
 
         jLabel1.setText("Nombre:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         jLabel2.setText("Apellido");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
 
         jLabel3.setText("Edad");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
 
         jLabel4.setText("Correo:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
 
         jLabel5.setText("Telefono");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
 
         btn_Guardar.setText("Guardar");
         btn_Guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -68,74 +85,35 @@ public class pnf_clientes extends javax.swing.JPanel {
                 btn_GuardarActionPerformed(evt);
             }
         });
+        add(btn_Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 100, 129, 76));
 
         btn_Borrar.setText("Borrar");
+        add(btn_Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 410, 126, 76));
 
         btn_actualizar.setText("Actualizar");
         btn_actualizar.setToolTipText("");
+        add(btn_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 250, 130, 76));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(73, 73, 73)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_nombre)
-                            .addComponent(txt_apellido)
-                            .addComponent(txt_edad)
-                            .addComponent(txt_correo)
-                            .addComponent(txt_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(btn_Guardar)
-                        .addGap(69, 69, 69)
-                        .addComponent(btn_Borrar)
-                        .addGap(67, 67, 67)
-                        .addComponent(btn_actualizar)))
-                .addContainerGap(213, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txt_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Guardar)
-                    .addComponent(btn_Borrar)
-                    .addComponent(btn_actualizar))
-                .addGap(88, 88, 88))
-        );
+        jLabel6.setText("Cedula");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        add(txt_Cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 155, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel7.setText("Numero:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+
+        jLabel8.setText("00");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, 20));
     }// </editor-fold>//GEN-END:initComponents
+private void applyTextfieldStyles() {
+        txt_estilos.applyTextFieldStyle(txt_nombre);
+        txt_estilos.applyTextFieldStyle(txt_apellido);
+        txt_estilos.applyTextFieldStyle(txt_Cedula);
+        txt_estilos.applyTextFieldStyle(txt_edad);
+        txt_estilos.applyTextFieldStyle(txt_correo);
+        txt_estilos.applyTextFieldStyle(txt_telefono);
 
+    }
     private void btn_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarActionPerformed
         clientes obj_C = new clientes();
         obj_C.setNombre(txt_nombre.getText().trim());
@@ -143,7 +121,7 @@ public class pnf_clientes extends javax.swing.JPanel {
         obj_C.setEdad(Integer.parseInt(txt_edad.getText().trim()));
         obj_C.setCorreo(txt_correo.getText().trim());
         obj_C.setTelefono(txt_telefono.getText().trim());
-        
+
         obj_C.mostrar();
 
 
@@ -163,6 +141,10 @@ public class pnf_clientes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField txt_Cedula;
     private javax.swing.JTextField txt_apellido;
     private javax.swing.JTextField txt_correo;
     private javax.swing.JTextField txt_edad;

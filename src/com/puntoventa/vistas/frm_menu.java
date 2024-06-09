@@ -25,6 +25,7 @@ public class frm_menu extends javax.swing.JFrame {
     public frm_menu() {
         initComponents();
         applyButtonStyles();
+        scaleLogoImage();
 
     }
 
@@ -44,16 +45,23 @@ public class frm_menu extends javax.swing.JFrame {
         lbl_productos = new javax.swing.JLabel();
         lbl_vendedores = new javax.swing.JLabel();
         body = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        lbl_logo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 626));
+        setSize(new java.awt.Dimension(1000, 625));
 
-        jp_bg.setBackground(new java.awt.Color(204, 255, 255));
+        jp_bg.setBackground(new java.awt.Color(0, 102, 204));
+        jp_bg.setMinimumSize(new java.awt.Dimension(1000, 625));
+        jp_bg.setPreferredSize(new java.awt.Dimension(1000, 625));
+        jp_bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_menu.setBackground(new java.awt.Color(204, 255, 204));
+        panel_menu.setBackground(new java.awt.Color(54, 70, 78));
 
         lbl_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/puntoventa/recursos/venta.png"))); // NOI18N
         lbl_ventas.setText("Ventas");
+        lbl_ventas.setToolTipText("");
         lbl_ventas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_ventasMouseClicked(evt);
@@ -78,60 +86,49 @@ public class frm_menu extends javax.swing.JFrame {
 
         lbl_vendedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/puntoventa/recursos/vendedor.png"))); // NOI18N
         lbl_vendedores.setText("Vendedores");
+        lbl_vendedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_vendedoresMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_menuLayout = new javax.swing.GroupLayout(panel_menu);
         panel_menu.setLayout(panel_menuLayout);
         panel_menuLayout.setHorizontalGroup(
             panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_menuLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbl_ventas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_productos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_vendedores, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
+            .addComponent(lbl_ventas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_productos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_vendedores, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
         );
         panel_menuLayout.setVerticalGroup(
             panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_menuLayout.createSequentialGroup()
-                .addGap(266, 266, 266)
+                .addGap(64, 64, 64)
                 .addComponent(lbl_ventas, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
+                .addGap(45, 45, 45)
                 .addComponent(lbl_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(47, 47, 47)
                 .addComponent(lbl_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
+                .addGap(46, 46, 46)
                 .addComponent(lbl_vendedores, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 164, Short.MAX_VALUE))
+                .addGap(0, 188, Short.MAX_VALUE))
         );
+
+        jp_bg.add(panel_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 73, 210, 552));
 
         body.setLayout(new java.awt.BorderLayout());
+        jp_bg.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 73, 790, 552));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
-        jLabel5.setText("Punto de Venta");
+        lbl_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/puntoventa/recursos/pngwing.com.png"))); // NOI18N
+        lbl_logo.setText("jLabel2");
+        lbl_logo.setPreferredSize(new java.awt.Dimension(41, 50));
+        jp_bg.add(lbl_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 80, 70));
 
-        javax.swing.GroupLayout jp_bgLayout = new javax.swing.GroupLayout(jp_bg);
-        jp_bg.setLayout(jp_bgLayout);
-        jp_bgLayout.setHorizontalGroup(
-            jp_bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_bgLayout.createSequentialGroup()
-                .addComponent(panel_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jp_bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jp_bgLayout.setVerticalGroup(
-            jp_bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_bgLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(panel_menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Punto de venta");
+        jp_bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 490, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,17 +146,39 @@ public class frm_menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbl_ventasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_ventasMouseClicked
-       
-    }//GEN-LAST:event_lbl_ventasMouseClicked
 
+    }//GEN-LAST:event_lbl_ventasMouseClicked
+    private void scaleLogoImage() {
+        try {
+            // Cargar la imagen desde los recursos
+            InputStream imgStream = getClass().getResourceAsStream("/com/puntoventa/recursos/pngwing.com.png");
+            if (imgStream == null) {
+                throw new IOException("Imagen no encontrada");
+            }
+            BufferedImage img = ImageIO.read(imgStream);
+
+            // Escalar la imagen al tamaño del JLabel
+            Image scaledImage = img.getScaledInstance(lbl_logo.getWidth(), lbl_logo.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon icon = new ImageIcon(scaledImage);
+
+            // Establecer la imagen escalada como icono del JLabel
+            lbl_logo.setIcon(icon);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     private void lbl_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_clientesMouseClicked
-         showForm(new pnf_clientes());
+        showForm(new pnf_clientes());
     }//GEN-LAST:event_lbl_clientesMouseClicked
 
     private void lbl_productosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_productosMouseClicked
         TestConexion obj = new TestConexion();
-         obj.main(new String[]{});
+        obj.main(new String[]{});
     }//GEN-LAST:event_lbl_productosMouseClicked
+
+    private void lbl_vendedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_vendedoresMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lbl_vendedoresMouseClicked
 
     /**
      * @param args the command line arguments
@@ -172,7 +191,7 @@ public class frm_menu extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -212,9 +231,10 @@ public class frm_menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel body;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jp_bg;
     private javax.swing.JLabel lbl_clientes;
+    private javax.swing.JLabel lbl_logo;
     private javax.swing.JLabel lbl_productos;
     private javax.swing.JLabel lbl_vendedores;
     private javax.swing.JLabel lbl_ventas;
