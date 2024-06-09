@@ -47,7 +47,12 @@ public class pnf_clientes extends javax.swing.JPanel {
         txt_Cedula = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_direccion = new javax.swing.JTextArea();
 
+        setMinimumSize(new java.awt.Dimension(790, 552));
         setPreferredSize(new java.awt.Dimension(790, 552));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -56,13 +61,13 @@ public class pnf_clientes extends javax.swing.JPanel {
                 txt_nombreActionPerformed(evt);
             }
         });
-        add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 153, -1));
-        add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 155, -1));
-        add(txt_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 77, -1));
-        add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 284, -1));
+        add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 220, -1));
+        add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 220, -1));
+        add(txt_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 120, -1));
+        add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 310, -1));
 
         txt_telefono.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 155, -1));
+        add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 220, -1));
 
         jLabel1.setText("Nombre:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
@@ -71,13 +76,13 @@ public class pnf_clientes extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
 
         jLabel3.setText("Edad");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 30, -1));
 
         jLabel4.setText("Correo:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
 
         jLabel5.setText("Telefono");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, -1));
 
         btn_Guardar.setText("Guardar");
         btn_Guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -95,15 +100,28 @@ public class pnf_clientes extends javax.swing.JPanel {
         add(btn_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 250, 130, 76));
 
         jLabel6.setText("Cedula");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
-        add(txt_Cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 155, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        add(txt_Cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 220, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel7.setText("Numero:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, -1, -1));
 
         jLabel8.setText("00");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, 20));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, 20));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Emoji", 1, 36)); // NOI18N
+        jLabel9.setText("Nuevo Cliente");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 260, 50));
+
+        jLabel10.setText("Dirección");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
+
+        txt_direccion.setColumns(20);
+        txt_direccion.setRows(5);
+        jScrollPane1.setViewportView(txt_direccion);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 470, 100));
     }// </editor-fold>//GEN-END:initComponents
 private void applyTextfieldStyles() {
         txt_estilos.applyTextFieldStyle(txt_nombre);
@@ -116,14 +134,13 @@ private void applyTextfieldStyles() {
     }
     private void btn_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarActionPerformed
         clientes obj_C = new clientes();
+        obj_C.setCed_cliente(txt_Cedula.getText().trim());
         obj_C.setNombre(txt_nombre.getText().trim());
         obj_C.setApellido(txt_apellido.getText().trim());
         obj_C.setEdad(Integer.parseInt(txt_edad.getText().trim()));
         obj_C.setCorreo(txt_correo.getText().trim());
         obj_C.setTelefono(txt_telefono.getText().trim());
-
-        obj_C.mostrar();
-
+        obj_C.setDireccion(txt_direccion.getText().trim());
 
     }//GEN-LAST:event_btn_GuardarActionPerformed
 
@@ -137,6 +154,7 @@ private void applyTextfieldStyles() {
     private javax.swing.JButton btn_Guardar;
     private javax.swing.JButton btn_actualizar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -144,9 +162,12 @@ private void applyTextfieldStyles() {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txt_Cedula;
     private javax.swing.JTextField txt_apellido;
     private javax.swing.JTextField txt_correo;
+    private javax.swing.JTextArea txt_direccion;
     private javax.swing.JTextField txt_edad;
     private javax.swing.JTextField txt_nombre;
     private javax.swing.JTextField txt_telefono;
